@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create a task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-list>
+    <ion-item>
+      <ion-label><b>Name of the task:</b></ion-label>
+      <br>
+      <ion-input id="nameTask" required [(ngModel)]="task.nameTask" name="nameTask"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>ID of the Subject:</b></ion-label>
+      <ion-input id="idSubject" required [(ngModel)]="task.idSubject" name="idSubject"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Limit date:</b></ion-label>
+      <ion-input id="dateTask" required [(ngModel)]="task.dateTask" name="dateTask"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Description:</b></ion-label>
+      <ion-input id="descriptionTask" required [(ngModel)]="task.descriptionTask" name="descriptionTask"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button class="submit" (click)="onSubmit()" color="success">Submit</ion-button>
+  <ion-button class="submit" (click)="return()" color="primary">Return</ion-button>
+  <div class="submitted" [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+  </div>
+  <div class="error" [hidden]="!error">
+    <h4>An error has been encountered, please 
+      fill the fields correctly</h4>
+  </div>
+</ion-content>
